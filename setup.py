@@ -24,6 +24,6 @@ setup(name="django-template-server",
       license='BSD',
       packages=['templateserver'],
       entry_points=dict(console_scripts=['maketemplateserver=templateserver.maketemplateserver:main']),
-      install_require=['virtualenv>=1.6'],
+      install_requires=['virtualenv>=1.6', 'argparse'],
       include_package_data=True,
       zip_safe=False)

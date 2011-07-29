@@ -5,9 +5,9 @@ import virtualenv
 from templateserver import __version__ as version
 
 
-DEFAULT_TEMPLATE_DIR = os.path.abspath(os.path.join(os.getcwd(), 'templates', ''))
-DEFAULT_MEDIA_DIR = os.path.abspath(os.path.join(os.getcwd(), 'media', ''))
-DEFAULT_ENV_DIR = os.path.abspath(os.path.join(os.getcwd(), '.env', ''))
+DEFAULT_TEMPLATE_DIR = 'templates'
+DEFAULT_MEDIA_DIR = 'media'
+DEFAULT_ENV_DIR = './.env'
 DEFAULT_RUNSERVER_PATH = os.path.abspath(os.path.join(os.getcwd(), 'runserver.py'))
 
 RUNSERVER_TEMPLATE = os.path.abspath(os.path.join(os.path.dirname(__file__), 'runserver_template.py'))
@@ -19,7 +19,7 @@ def install_virtualenv(envdir):
 
 def install_django(envdir, version):
     pip = os.path.join(envdir, 'bin', 'pip')
-    subprocess.call([pip, 'install', 'django==%s' % version])
+    subprocess.call([pip, 'install', 'django==%s' % version, 'argparse'])
     
 def install_runserver(envdir, runserverpath, templatedir, mediadir):
     python = os.path.join(envdir, 'bin', 'python')

@@ -9,8 +9,10 @@ from django.http import HttpResponse
 import os
 import socket
 
-TEMPLATE_DIR = '$TEMPLATEDIR$'
-MEDIA_DIR = '$MEDIADIR$'
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+
+TEMPLATE_DIR = os.path.join(PROJECT_DIR, "$TEMPLATEDIR$")
+MEDIA_DIR = os.path.join(PROJECT_DIR, "$MEDIADIR$")
 
 #==============================================================================
 # Views 
